@@ -32,7 +32,7 @@ jobs:
       - name: "run tests" 
         run: npm run test  
       - name: "build npm project" 
-        run: pnm run build 
+        run: npm run build 
       - name: "depoyed application" 
         run: echo "deployment successful ...."    
            
