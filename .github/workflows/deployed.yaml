@@ -5,6 +5,8 @@ jobs:
     run-on: ubuntu-latest
     steps: 
       - name: "welcome message" 
-        run: echo "hello world" 
+        run: |
+          echo "hello world" 
+          echo "bye bye ....."
 
    
