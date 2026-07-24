@@ -1,0 +1,10 @@
+name: deployed sample 
+on: [push,workflow_dispatch]
+jobs:
+  gretting:
+    run-on: ubuntu-latest
+    steps:
+      - name: "welcome message"
+        run: |
+          echo "hello world"
+          echo "bye bye" 
