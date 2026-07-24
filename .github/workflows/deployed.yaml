@@ -1,5 +1,5 @@
 name: cloning git code 
-on: [push]
+on: [push,workflow_dispatch]
 jobs:
   cloning_git: 
     runs-on: ubuntu-latest 
