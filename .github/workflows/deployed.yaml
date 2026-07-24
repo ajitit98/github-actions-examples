@@ -17,6 +17,7 @@ jobs:
       - name: "run tests" 
         run: npm run test  
   depoy:
+    needs: test
     runs-on: ubuntu-latest 
     steps: 
       - name: "cloning git  code" 
