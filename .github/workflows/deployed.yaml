@@ -1,15 +1,17 @@
-name: cloning repo 
-on: [push,workflow_dispatch]
+name: cloning git code 
+on: [push]
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "cloning code" 
+  cloning_git: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: "cloning git  code" 
         run: |
-          echo "cloning code" 
-          echo "${{toJson(github)}}"
+          echo "clone code from remoite repo" 
+          echo "print git logs"
+          echo "${{tojson(github)}}"
           git clone https://github.com/${{github.repository}}.git
-   
+
+  
 
             
       
