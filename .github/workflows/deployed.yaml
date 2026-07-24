@@ -1,12 +1,17 @@
-name: deployed sample 
+name: cloning repo 
 on: [push,workflow_dispatch]
 jobs:
-  greet: 
-    run-on: ubuntu-latest
-    steps: 
-      - name: "welcome message" 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "cloning code" 
         run: |
-          echo "hello world" 
-          echo "bye bye ....."
-
+          echo "cloning code" 
+          echo "${{toJson(github)}}"
+          git clone https://github.com/${{github.repository}}.git
    
+
+            
+      
+      
+  
