@@ -1,21 +1,21 @@
-name: cloning git code 
-on: [push,workflow_dispatch]
-jobs:
-  cloning_git: 
-    runs-on: ubuntu-latest 
-    steps: 
-      - name: "cloning git  code" 
-        uses: actions/checkout@v7
-      - name: "check npm version"
-        run: node -v 
-      - name: "install node 20 version" 
-        uses: actions/setup-node@v7  
-        with: 
-           node-version: '20' 
-      - name: "install dependency"
-        run: npm ci 
-      - name: "run tests" 
-        run: npm run test        
+# name: cloning git code 
+# on: [push,workflow_dispatch]
+# jobs:
+#   cloning_git: 
+#     runs-on: ubuntu-latest 
+#     steps: 
+#       - name: "cloning git  code" 
+#         uses: actions/checkout@v7
+#       - name: "check npm version"
+#         run: node -v 
+#       - name: "install node 20 version" 
+#         uses: actions/setup-node@v7  
+#         with: 
+#            node-version: '20' 
+#       - name: "install dependency"
+#         run: npm ci 
+#       - name: "run tests" 
+#         run: npm run test        
         
 
   
