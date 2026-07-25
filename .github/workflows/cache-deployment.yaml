@@ -52,7 +52,7 @@ jobs:
               uses: actions/upload-pages-artifact@v3
               with: 
                 name: dist-files
-                path: build_outputs_folder/
+                path: dist
     deploy:
         needs: build
         runs-on: ubuntu-latest
