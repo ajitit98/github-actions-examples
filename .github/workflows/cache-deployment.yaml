@@ -1,5 +1,5 @@
 name: depolyment using cache 
-on: [push,workflow_dispatch]
+on: [push]
 jobs:
     test: 
         runs-on: ubuntu-latest 
@@ -20,6 +20,7 @@ jobs:
             - name: "run tests" 
               run: npm run test 
     depoyed:
+        needs: test
         runs-on: ubuntu-latest 
         steps: 
             - name: "cloning git code" 
