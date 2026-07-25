@@ -1,0 +1,41 @@
+name: depolyment using cache 
+on: [push,workflow_dispatch]
+jobs:
+    test: 
+        runs-on: ubuntu-latest 
+        steps: 
+            - name: "cloning code from git" 
+              uses: actions/checkout@v7
+            - name: "install node 20 version" 
+              uses: actions/setup-node@v7 
+              with: 
+                 node-version: '20'
+            - name: "cache dependency" 
+              uses: actions/cache@v6
+              with: 
+                path: ~/.npm
+                key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}     
+            - name: "install dependency"
+              run: npm ci 
+            - name: "run tests" 
+              run: npm run test 
+    depoyed:
+        runs-on: ubuntu-latest 
+        steps: 
+            - name: "cloning git code" 
+              uses: actions/checkout@v7
+            - name: "install node 20 version" 
+              uses:  actions/setup-node@v7 
+              with: 
+                node-version: '20'
+            - name: "cache dependency" 
+              uses: actions/cache@v6
+              with: 
+                path: ~/.npm
+                key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}     
+            - name: "install dependency" 
+              run: npm ci 
+            - name: "build project" 
+              run: npm run build 
+            - name: "deployment application" 
+              run: echo "deployment successful...."  
