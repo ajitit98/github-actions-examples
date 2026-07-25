@@ -6,7 +6,7 @@ on:
             - main 
             - 'feature/**'
         paths-ignore:
-            - .github/workflow/**
+            - '.github/workflow/**'
             - README.md 
     workflow_dispatch:   
 
